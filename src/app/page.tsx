@@ -24,7 +24,7 @@ export default function Home() {
         </div>
       </div>
       <div className="flex min-h-screen justify-center">
-        <div className="2xl:w-6/12 2xl:h-screen bg-white">
+        <div className="2xl:w-6/12 2xl:h-screen bg-white overflow-clip relative">
           <div className="px-20 py-10">
             <p className="font-bold text-xl">User Equipment manager</p>
             <div className="flex flex-row justify-end mt-1">
@@ -42,6 +42,15 @@ export default function Home() {
                   elem.style.display = "block";
                 }
               }} className='cursor-pointer hover:bg-gray-200 rounded-full h-12 w-12 bg-gray-100 flex items-center justify-center'><PlusIcon className='h-5 w-5'></PlusIcon></div>
+              <div className='rounded-full bg-gray-100 absolute top-10'
+                style={{ height: "50rem", width: "50rem", transform: "translateY(-20rem) translateX(20rem)" }}>
+                <div style={{ transform: "translateY(25rem)" }}>
+                  <p className='font-semibold text-xl' style={{ transform: "translateX(5rem)" }}>Add new UE</p>
+                  <p className='text-lg' style={{ transform: "translateY(5rem) translateX(7rem)" }}>Add manually</p>
+                  <p className='text-lg' style={{ transform: "translateY(8rem) translateX(10rem)" }}>Upload .csv list</p>
+                  <p className='text-lg' style={{ transform: "translateY(11rem) translateX(15rem)" }}>Upload backup file</p>
+                </div>
+              </div>
             </div>
             <div className="mt-10 w-full overflow-auto">
               <table className="w-full">
