@@ -35,3 +35,11 @@ tr > th {
 tr > td {
   padding: 0.6rem;
 }
+
+#add-button:hover + .hidden-button {
+  visibility: visible;
+}
+
+.hidden-button:hover {
+  visibility: visible;
+}
