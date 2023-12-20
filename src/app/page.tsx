@@ -18,18 +18,29 @@ export default function Home() {
         }} className="flex h-screen w-full justify-center items-center absolute">
           <div onClick={(event) => {
             event.stopPropagation()
-          }} className="xl:w-5/12 xl:h-4/5 bg-white rounded-md">
+          }} className="xl:w-5/12 bg-white rounded-md">
             <div className='px-10 py-6'>
               <p className='text-lg font-bold'>Add new UE manually</p>
-              <div className="grid gap-x-1 grid-cols-4 grid-rows-1 pt-2 items-center w-8/12 mt-4">
-                <p className='mb-1'>IMSI</p>
-                <input className="mb-1 col-span-3 appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="208930000000001"></input>
+              <div className='flex flex-row mt-12 space-x-8'>
+                <div className='w-8/12'>
+                  <div className="grid gap-x-1 grid-cols-4 grid-rows-1 items-center">
+                    <p>IMSI</p>
+                    <input className="col-span-3 appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="208930000000001"></input>
+                  </div>
+                  <div className="grid gap-y-2 gap-x-1 grid-cols-4 grid-rows-2 items-center mt-4">
+                    <p>K</p>
+                    <input className="col-span-3 appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="548327912488348294384"></input>
+                    <p>OPC</p>
+                    <input className="col-span-3 appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="548327912488348294384"></input>
+                  </div>
+                </div>
+                <div className='bg-blue-600 w-4/12 px-6 py-2 text-white italic text-sm'>
+                  <p>Something about Card Readers, private keys, SIM support, no eSIM support. </p>
+                </div>
               </div>
-              <div className="grid gap-y-2 gap-x-1 grid-cols-4 grid-rows-2 items-center w-8/12 mt-3">
-                <p>K</p>
-                <input className="col-span-3 appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="548327912488348294384"></input>
-                <p>OPC</p>
-                <input className="col-span-3 appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="548327912488348294384"></input>
+              <div className='flex space-x-4 flex-row mt-12 justify-center'>
+                <button className='border border-gray-300 rounded px-3 py-1 hover:bg-gray-100'>Cancel</button>
+                <button className='border border-gray-400 rounded px-3 py-1 hover:bg-gray-100'>Confirm</button>
               </div>
             </div>
           </div>
@@ -68,11 +79,23 @@ export default function Home() {
                   }} className='cursor-pointer rounded-full h-10 w-10 bg-gray-100 mr-6 flex items-center justify-center'>
                     <PencilIcon className='h-5 w-5'></PencilIcon>
                   </div>
-                  <div className='cursor-pointer rounded-full h-10 w-10 bg-gray-100 mr-4 flex items-center justify-center'>
+                  <div onClick={() => {
+                    var elem = document.getElementById('listfileid')
+                    if (elem != null) {
+                      elem.click();
+                    }
+                  }} className='cursor-pointer rounded-full h-10 w-10 bg-gray-100 mr-4 flex items-center justify-center'>
                     <DocumentTextIcon className='h-5 w-5'></DocumentTextIcon>
+                    <input id='listfileid' type='file' hidden />
                   </div>
-                  <div className='cursor-pointer rounded-full h-10 w-10 bg-gray-100 mr-4 flex items-center justify-center'>
+                  <div onClick={() => {
+                    var elem = document.getElementById('backupfileid')
+                    if (elem != null) {
+                      elem.click();
+                    }
+                  }} className='cursor-pointer rounded-full h-10 w-10 bg-gray-100 mr-4 flex items-center justify-center'>
                     <DocumentIcon className='h-5 w-5'></DocumentIcon>
+                    <input id='backupfileid' type='file' hidden />
                   </div>
                 </div>
               </div>
